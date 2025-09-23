@@ -38,3 +38,12 @@ $ python manage.py runserver 0.0.0.0:8000
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 ```
+
+
+
+
+# pythonanywhereのデプロイ
+1. [アカウント登録](https://www.pythonanywhere.com/)
+2. BashConsole作成
+   1. pip3.9 install --user pythonanywhere
+   2. $ pa_autoconfigure_django.py --python=3.9 --branch=<branchname>https://github.com/<username>/<repositoryname>.git
