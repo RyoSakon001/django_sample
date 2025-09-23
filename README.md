@@ -30,3 +30,11 @@ $ python manage.py runserver 0.0.0.0:8000
 ```
 2. http://127.0.0.1:8000/admin/login/?next=/admin/ へアクセス
 3. 上記のusername, passwordでログインできることを確認
+
+## その他
+タイムゾーン変更
+```
+// settings.py 100行目付近
+LANGUAGE_CODE = 'ja'
+TIME_ZONE = 'Asia/Tokyo'
+```
