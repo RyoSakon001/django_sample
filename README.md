@@ -20,6 +20,11 @@ $ python manage.py runserver 0.0.0.0:8000
 3. http://127.0.0.1:8000/admin/login/?next=/admin/ へアクセス
 4. 上記のusername, passwordでログインできることを確認
 
+# Databaseのスキーマ変更
+1. Modelを変更
+2. python manage.py makemigrations app_name
+3. python manage.py migrate
+
 ## その他
 #### タイムゾーン変更
 ```
