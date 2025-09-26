@@ -19,11 +19,7 @@
         "ms-python.python",                  // Python サポート
         "ms-python.vscode-pylance",          // 型チェック・補完強化
         "ms-python.black-formatter",         // Black フォーマッタ
-        "charliermarsh.ruff",                // Linter (PEP8やDjango対応も強い)
-        "batisteo.vscode-django",            // Django 用スニペットやハイライト
-        "batisteo.vscode-django-templates",  // Django template 用シンタックス
-        "batisteo.vscode-django-snippets",   // Django コードスニペット
-        "kevinrose.vsc-python-indent"       // Python インデント補助
+        "charliermarsh.ruff"                 // Linter (PEP8やDjango対応も強い)
       ]
     }
   }
