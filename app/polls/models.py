@@ -14,7 +14,7 @@ class Question(models.Model):
     @admin.display(
         boolean=True,
         ordering="pub_date",
-        description="Published recently??????",
+        description="Published recently?",
     )
 
     def was_published_recently(self):
