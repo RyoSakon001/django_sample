@@ -33,7 +33,12 @@ LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
 ```
 
-
+## Gitの設定変更
+Dockerコンテナ内でPushを行うと、全ファイルの差分が発生してしまう。
+ソースコードの変更はないが、権限が変わっていることが差分の原因。下記のコマンドを実行
+```
+# git config core.whitespace cr-at-eol
+```
 
 
 # pythonanywhereのデプロイ
