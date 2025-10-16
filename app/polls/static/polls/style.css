@@ -1,0 +1,8 @@
+li a {
+    color: green;
+}
+
+body {
+    background: lightgreen url("images/bg.jpg") no-repeat;
+    /* background: whitesmoke url("images/background.png") no-repeat; */
+}
