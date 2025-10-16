@@ -79,5 +79,8 @@ def vote(request, question_id):
     
 
 def htmx_sample(request):
-    return HttpResponse("aaaaaa")
-    
+    return render(request, "polls/htmx_sample.html")
+
+
+def world(request):
+    return render(request, 'polls/world.html', {'message': 'World'})

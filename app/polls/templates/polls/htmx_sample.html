@@ -1,28 +1,25 @@
+
 {% load static %}
-<!DOCTYPE html>
-<html>
 <head>
-    <title>HTMX Vote Sample</title>
+  <meta charset="utf-8" />
+  <title>Hello World</title>
+  <!--追加-->
+  <script src="{% static 'polls/js/htmx.min.js' %}" defer></script>
 </head>
 <body>
+  <!--コメントアウト-->	  
+  <!--Hello-->
 
-    <h1>HTMX Vote Sample</h1>
-
-    <p>ユーザー名を入力して挨拶を表示するサンプルです。</p>
-    <form
-      hx-post="{% url 'polls:htmx_sample' %}"
-      hx-target="#response"
-      hx-swap="innerHTML"
-    >
-      {% csrf_token %}
-      <input type="text" name="username" placeholder="ユーザー名">
-      <button type="submit">送信</button>
-    </form>
-    <div id="response">
-    </div>
-
-    <hr>
-
-    <script src="{% static 'polls/js/htmx.min.js' %}" defer></script>
+  <!--追加-->
+  <!--AJAXを呼び出す-->
+  <button
+    hx-get="/polls/world"
+    hx-trigger="click"
+    hx-target="#world"
+    hx-swap="outerHTML"
+  >
+    Hello
+  </button>
+  <!--置換用spanです-->
+  <span id="world"><span/>
 </body>
-</html>
