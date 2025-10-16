@@ -27,7 +27,8 @@
         "mhutchie.git-graph",                // Git 可視化
         "donjayamanne.githistory",           // Git 履歴確認
         "ms-azuretools.vscode-docker",       // Docker 拡張（compose 開発と相性よし）
-        "eamodio.gitlens"                    // Git 強化（履歴・責任範囲・差分可視化が超便利）
+        "eamodio.gitlens",                    // Git 強化（履歴・責任範囲・差分可視化が超便利）
+        "google.geminicodeassist"
       ]
     }
   }
