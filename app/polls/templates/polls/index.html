@@ -1,36 +1,8 @@
-{% load static %}
-{% load static tailwind_tags %}
+{% extends "polls/includes/base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Django Tailwind</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% tailwind_css %}
-</head>
+{% block title %}ホーム{% endblock %}
 
-<body class="bg-gray-50 text-black font-serif leading-normal tracking-normal">
-    <div class="toast toast-top toast-end">
-        <div class="alert alert-info">
-            <span>Hello from daisyUi 👋</span>
-        </div>
-    </div>
-    <div class="container mx-auto">
-        <section class="flex items-center justify-center h-screen">
-            <h1 class="text-6xl font-bold">Django + Tailwind = ❤️</h1>
-        </section>
-    </div>
-    <h1 class="flex flex-col items-center p-7 rounded-2xl text-red">aaaa</h1>
-    {% if latest_question_list %}
-        <ul class="text-blue-500">
-        {% for question in latest_question_list %}
-            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No polls are available.</p>
-    {% endif %}
-</body>
-</html>
+{% block content %}
+<h2>トップページ</h2>
+<p>ようこそ、{{ user.username|default:"ゲスト" }} さん！</p>
+{% endblock %}

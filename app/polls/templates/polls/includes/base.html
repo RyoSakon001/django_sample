@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}サイトタイトル{% endblock %}</title>
+    {% load static %}
+    {% load static tailwind_tags %}
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- 共通ヘッダー -->
+    {% include "polls/includes/header.html" %}
+
+    <!-- コンテンツ領域 -->
+    <div class="flex flex-1">
+        <!-- サイドバー -->
+        <aside class="w-64 bg-white border-r border-gray-200 p-4 hidden md:block">
+            {% include "polls/includes/sidebar.html" %}
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="flex-1 p-6">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <!-- 共通フッター -->
+    {% include "polls/includes/footer.html" %}
+
+</body>
+</html>
