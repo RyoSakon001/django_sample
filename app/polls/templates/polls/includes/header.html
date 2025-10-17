@@ -1,19 +1,32 @@
-<header class="bg-blue-600 text-white shadow">
-    <div class="container mx-auto flex justify-between items-center px-4 py-3">
-        <h1 class="text-xl font-bold">My Django Site</h1>
-        <nav>
-            <ul class="flex space-x-4">
-                <li><a href="{% url 'polls:index' %}" class="hover:text-blue-200">ホーム</a></li>
-                <li><a href="#" class="hover:text-blue-200">会社概要</a></li>
+<header class="flex items-center justify-between px-6 py-4 bg-blue-600 text-white shadow">
+    <div class="flex items-center space-x-2">
+        <!-- ハンバーガーメニュー（スマホ専用） -->
+        <button 
+            class="p-2 rounded-md hover:bg-blue-700 lg:hidden"
+            @click="sidebarOpen = !sidebarOpen"
+        >
+            <!-- アイコン -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
 
-                {% if user.is_authenticated %}
-                    <li><a href="#" class="hover:text-blue-200">ログアウト</a></li>
-                    <li><span class="text-sm text-blue-100">{{ user.username }} さん</span></li>
-                {% else %}
-                    <li><a href="#" class="hover:text-blue-200">ログイン</a></li>
-                    <li><a href="#" class="hover:text-blue-200">新規登録</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+        <h1 class="text-xl font-semibold">My Django Site</h1>
     </div>
+
+    <nav class="hidden lg:block">
+        <ul class="flex space-x-6">
+            <li><a href="{% url 'polls:index' %}" class="hover:underline">ホーム</a></li>
+            <li><a href="#" class="hover:underline">会社概要</a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="#" class="hover:underline">ログアウト</a></li>
+                <li><span>{{ user.username }} さん</span></li>
+            {% else %}
+                <li><a href="#" class="hover:underline">ログイン</a></li>
+                <li><a href="#" class="hover:underline">新規登録</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 </header>
