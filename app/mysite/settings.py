@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'tailwind',
+    'theme',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +140,19 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# debug-toolbar
 if DEBUG:
     hostname, __, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1']
+
+# Tailwind CSS
+TAILWIND_APP_NAME = 'theme'
+if DEBUG:
+    INSTALLED_APPS += ['django_browser_reload']
+    MIDDLEWARE += [
+        "django_browser_reload.middleware.BrowserReloadMiddleware",
+]
+
+TAILWIND_DEV_SERVER_PORT = 8000
+TAILWIND_RUNSERVER_PORT = 8000
+TAILWIND_RUNSERVER_ADDRESS = "0.0.0.0"
