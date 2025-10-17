@@ -2,3 +2,4 @@
 /.local
 **/__pycache__/**
 .DS_Store
+app/theme/static/css/dist/styles.css
