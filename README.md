@@ -65,7 +65,31 @@ $ python manage.py runserver 0.0.0.0:8000
   - git config core.whitespace cr-at-eol
   - もし既に発生した場合は、変更内容をステージに上げれば直るはず
 
+# チュートリアルについて
+- [Djangoチュートリアル](https://docs.djangoproject.com/ja/5.2/intro/tutorial01/)
+- チュートリアル５でPermission deniedのエラーが出た場合、.envの内容を確認
+  - MYSQL_USER=root
+  - MYSQL_PASSWORD=rootroot
+- チュートリアル８
+  - [公式ドキュメント](https://django-debug-toolbar.readthedocs.io/en/latest/installation.html)
+  - debug-toolbarをインストールする際、下記のコマンドは使用しない。
+  - ❌python -m pip install django-debug-toolbar
+  - 代わりに、requirements.txtにdjango-debug-toolbarの設定を加える
+  - 左下のボタンから「コンテナのリビルド」を選択
+  - このチュートリアルはDjangoのバージョンが4.2になっているが、
+    - Django=4.2.20
+    - debug-toolbar=6.0.0
+    - にするとよい（あえてバージョンを変えずに、バージョン不一致のエラーを見ておくと、他のサードパーティを導入する際の対応が上手くなるかも）
+
+# TailwindCSS
+wip
+
+# Alpine.js
+wip
+
 # pythonanywhereのデプロイ
+wip
+
 1. [アカウント登録](https://www.pythonanywhere.com/)
 2. BashConsole作成
    1. pip3.9 install --user pythonanywhere
