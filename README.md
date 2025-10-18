@@ -1,9 +1,26 @@
-# 環境構築の手順
-# Docker環境の構築
-- VSCodeの拡張機能として Dev Containers をインストール
-- Docker Desktop を起動
-- コンテナに入る
+# Docker Desktopのインストール
+- [こちら](https://zenn.dev/upgradetech/articles/8e8b82e9d5c494)を参考に導入
 
+# WSLのインストール
+- ディストリビューションはUbuntu
+- [こちら](https://zenn.dev/kuuki/articles/windows-ubuntu-insall)を参考に導入
+
+# Dockerコンテナに入るまで
+- VSCodeの拡張機能として[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)をインストール
+- Docker Desktop を起動
+- .exampleをそのままコピーして、.envを作成
+- 左下の「><」のボタンを押下する
+- 「コンテナで再度開く」を選択
+- →コンテナに入ることができる
+  - ※whoamiコマンドを実行すると、コンテナに入る前と入った後で、ユーザーが変わっていることを確認できる
+
+# Dockerコンテナから出る方法
+- コンテナに入れていれば、左下の「><」ボタンが「開発コンテナ..」に変わっている
+- 「開発コンテナ..」を押下する
+- 「ローカルで再度開く」を選択
+
+# コンテナに入ったあと、Hello Worldをするまで
+- 
 ## MySQLの初期設定
 
 1. .envを作成
