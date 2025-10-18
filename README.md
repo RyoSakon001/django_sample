@@ -105,12 +105,42 @@ if DEBUG:
 - .gitignoreに、`theme/static/css/dist/styles.css`を入れておくこと
 
 # Alpine.js
+- [公式ドキュメント](https://alpinejs.dev/start-here)
+
+# pythonanywhereのデプロイ（初回）
 wip
 
-# pythonanywhereのデプロイ
-wip
-
-1. [アカウント登録](https://www.pythonanywhere.com/)
-2. BashConsole作成
+1. [参考](https://qiita.com/Pumpkin1e18/items/9b6fc79ad32769ec2b9d)
+   1. 参照するのは途中から（PythonAnywhereにユーザ登録をする）
+2. [アカウント登録](https://www.pythonanywhere.com/)
+3. APIトークン作成
+4. アプリ作成
+   1. Webを選択
+   2. Add a new web app
+   3. Django
+   4. Python3.13
+   5. Project Name, Directory は任意（そのままでもOK）
+5. httpsに対応させる
+6. BashConsole（ユーザー名などは適宜変更すること）
    1. pip3.9 install --user pythonanywhere
-   2. $ pa_autoconfigure_django.py --python=3.9 --branch=<branchname>https://github.com/<username>/<repositoryname>.git
+   2. pa_autoconfigure_django.py --python=3.13 --nuke --branch=main https://github.com/RyoSakon001/django_sample
+      1. ※このコマンドは途中で失敗する
+   3. cd ryosakon001.pythonanywhere.com
+   4. cp .env.example .env
+   5. vi .env
+      1. DEBUG=Falseにする
+      2. ALLOWED_HOSTSに ryosakon001.pythonanywhere.com を追加
+      3. ※「vi」はVimコマンド。Vimの使い方は各自調べること
+7. Database作成
+   1. Databasesを選択し、MySQLデータベースを作成
+   2. BashConsoleに戻り、 .envを編集
+      1. MYSQL_HOST=RyoSakon001.mysql.pythonanywhere-services.com
+      2. MYSQL_PORT=3306
+      3. MYSQL_NAME=RyoSakon001$default
+      4. MYSQL_USER=RyoSakon001
+      5. MYSQL_PASSWORD=your_password
+   3. python app/manage.py migrate
+   4. Webを開き、Reload
+
+# ２回目以降のデプロイ
+wip
