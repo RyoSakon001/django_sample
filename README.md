@@ -80,9 +80,29 @@ $ python manage.py runserver 0.0.0.0:8000
     - Django=4.2.20
     - debug-toolbar=6.0.0
     - にするとよい（あえてバージョンを変えずに、バージョン不一致のエラーを見ておくと、他のサードパーティを導入する際の対応が上手くなるかも）
+- debug-toolbarの挙動について
+  - Dockerを使用しているため、settings.pyに、特別にコード追加が必要
+```:settings.py
+if DEBUG:
+    hostname, __, ips = socket.gethostbyname_ex(socket.gethostname())
+    INTERNAL_IPS = [ip[:-1] + '1' for ip in ips] + ['127.0.0.1']
+```
+- Warningに書かれているとおり、 `debug_toolbar.middleware.show_toolbar_with_docker`を追加してみたが、上手くいかなかった。本来はこちらを使うべきなので、誰か成功したら教えてください。
+![alt text](doc/images/debug_toolbar_docker.png)
 
 # TailwindCSS
-wip
+## Dockerfileについて
+- コンテナの中で `Node.js`が使えるように加筆してあるので、読んで理解しておくこと
+## ドキュメント
+- [公式ドキュメント](https://django-tailwind.readthedocs.io/en/latest/installation.html)
+- Dockerを使用しているため、下記のコマンドは使わず、requirements.txtを使用する
+- ❌python -m pip install django-tailwind[reload]
+- インストールガイドの12番で `python manage.py tailwind dev`というコマンドが紹介されるが、このコマンドは0.0.0.0:8000に対してサーバを立ててしまうため、Docker内ではコマンドを分ける必要がある
+- ① python manage.py runserver 0.0.0.0:8000
+- ② python manage.py tailwind start
+- [daisyUI](https://daisyui.com/)を使うか聞かれるが、好みで決めてよい（個人的にはこれを使うのがオススメ）
+## その他
+- .gitignoreに、`theme/static/css/dist/styles.css`を入れておくこと
 
 # Alpine.js
 wip
