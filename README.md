@@ -131,6 +131,8 @@ wip
       1. DEBUG=Falseにする
       2. ALLOWED_HOSTSに ryosakon001.pythonanywhere.com を追加
       3. ※「vi」はVimコマンド。Vimの使い方は各自調べること
+   6. pip install django-debug-toolbar==6.0.0 django-browser-reload==1.18.0 django-tailwind[reload]==4.2.0
+      1. その他、requirements.txtに書かれているサードパーティは全て入れる
 7. Database作成
    1. Databasesを選択し、MySQLデータベースを作成
    2. BashConsoleに戻り、 .envを編集
